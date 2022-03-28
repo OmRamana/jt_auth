@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    'core.apps.CoreConfig',
 ]
 
 REST_FRAMEWORK = {
@@ -67,6 +68,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+JWT_AUTH = {
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'jt_auth.utils.my_jwt_response_handler'
+}
 
 ROOT_URLCONF = 'jt_auth.urls'
 
